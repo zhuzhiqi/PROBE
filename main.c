@@ -129,8 +129,9 @@ int main(int argc, char *argv[])
 
 	//parse_rtl_get_input_tlv(rtl_file,distri);
 	parse_rtl_get_input_tlv(rtl_file,distribution,process);
-	//gen_run_rtl_sim(GEN,RUN,0,process,"");
-	gen_run_cycle_sim(GEN,RUN,0,process);
+	gen_run_rtl_sim(GEN,RUN,0,process,"");
+	
+	//gen_run_cycle_sim(GEN,RUN,0,process);
 
 
 	
@@ -149,12 +150,14 @@ int main(int argc, char *argv[])
 
 	
 
-	//system("chmod +x ./vr_vsim.bat "); 
-	//system("./vr_vsim.bat >>LOG_Sim");
-	sprintf(cmd,"chmod +x ./%s.exe ",process);
-	system(cmd); 
-	sprintf(cmd, "./%s.exe >>LOG_Sim",process);
-	system(cmd);
+	system("chmod +x ./vr_vsim.bat "); 
+	system("./vr_vsim.bat >>LOG_Sim");
+	
+	//***Cycle accurate *****
+	//sprintf(cmd,"chmod +x ./%s.exe ",process);
+	//system(cmd); 
+	//sprintf(cmd, "./%s.exe >>LOG_Sim",process);
+	//system(cmd);
 	
 	
 	
